@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>看你有多色 THE COLOR</title>
     <style type="text/css">
-    	*{
+    	* {
     		margin: 0px;
     		padding: 0px;
     	}
@@ -13,11 +13,37 @@
     		height: 400px;
     		margin: 0px auto;
     	}
+    	.status {
+    		width: 400px;
+    		margin: 0px auto;
+    		font-size: 18px;
+    		font-family: "Times New Roman";
+    	}
+    	.reset {
+    		float: left;
+    		width: 100px;
+    		visibility: hidden;
+    	}
+    	.time {
+    		float: left;
+    		width: 150px;
+    		text-align: right;
+    	}
+    	.lv {
+    		float: left;
+    		width: 150px;
+    		text-align: right;
+    	}
     </style>
 </head>
 <body>
 	<div class="container">
 		<canvas width="400" height="400" id="gameView"></canvas>
+	</div>
+	<div class="status">
+		<input type="submit" value="RESET" class="reset" id="reset"></input>
+		<div class="time" id="time">TIMER: 60s</div>
+		<div class="lv" id="lv">LV: 0</div>
 	</div>
 	<script src="../_lib/easeljs-0.8.0.min.js"></script>
 	<script src="rect.js"></script>

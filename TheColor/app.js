@@ -15,7 +15,7 @@ var rect_w = stage.canvas.width;
 var rect_h = stage.canvas.height;
 var rect_gap = 5;
 
-function addRect () {
+function layout () {
   var color = randomColor() // 随机选取一个颜色
   var rx = parseInt(Math.random() * row_n); // 随机的x方向 index
   var ry = parseInt(Math.random() * row_n); // 随机的y方向 index
@@ -35,15 +35,43 @@ function addRect () {
           if (row_n < row_max) {
             row_n++;
           }
+          lvcount++;
+          lvDiv.innerHTML = "lv: " + lvcount;
           gameView.removeAllChildren();
-          addRect();
+          layout();
         });
       }
     }
   }
 }
 
-addRect();
+var resetBtn, timeDiv, lvDiv, timeout, timecount, timecount_max, lvcount;
+resetBtn = document.getElementById("reset");
+timeDiv = document.getElementById("time");
+lvDiv = document.getElementById("lv");
+
+resetBtn.addEventListener("click", boot);
+
+function boot () {
+  timecount = 0;
+  timecount_max = 60;
+  lvcount = 0;
+  row_n = 2;
+  resetBtn.style.visibility = "hidden";
+
+  layout();
+  timeout = setInterval(function () {
+    timecount++;
+    timeDiv.innerHTML = "TIMER: " + (timecount_max - timecount) + "s";
+    if (timecount === timecount_max) {
+      clearInterval(timeout);
+      gameView.removeAllChildren();
+      resetBtn.style.visibility = "visible";
+    }
+  }, 1000);
+}
+
+boot();
 
 createjs.Ticker.setFPS(30);
 createjs.Ticker.addEventListener("tick", stage);

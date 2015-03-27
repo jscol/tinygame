@@ -8,7 +8,8 @@ function randomColor () {
   return "#" + "000000".substring(0, 6 - color) + color;
 }
 
-var n = 2; // 每行个数
+var row_n = 2; // 每行矩形个数
+var row_max = 7; // 每行矩形最大数
 var rect_spe_alpha = 0.7; // 特殊矩形的alpha值
 var rect_w = stage.canvas.width;
 var rect_h = stage.canvas.height;
@@ -16,23 +17,23 @@ var rect_gap = 5;
 
 function addRect () {
   var color = randomColor() // 随机选取一个颜色
-  var rx = parseInt(Math.random() * n); // 随机的x方向 index
-  var ry = parseInt(Math.random() * n); // 随机的y方向 index
+  var rx = parseInt(Math.random() * row_n); // 随机的x方向 index
+  var ry = parseInt(Math.random() * row_n); // 随机的y方向 index
 
   // 布局
-  for (var indexX = 0; indexX < n; indexX++) {
-    for (var indexY = 0; indexY < n; indexY++) {
-      var r = new Rect((rect_w + rect_gap) / n - rect_gap, (rect_w + rect_gap) / n - rect_gap, color);
-      r.x = indexX * ((rect_w + rect_gap) / n);
-      r.y = indexY * ((rect_w + rect_gap) / n);
+  for (var indexX = 0; indexX < row_n; indexX++) {
+    for (var indexY = 0; indexY < row_n; indexY++) {
+      var r = new Rect((rect_w + rect_gap) / row_n - rect_gap, (rect_w + rect_gap) / row_n - rect_gap, color);
+      r.x = indexX * ((rect_w + rect_gap) / row_n);
+      r.y = indexY * ((rect_w + rect_gap) / row_n);
       gameView.addChild(r);
 
       if (indexX === rx && indexY === ry) {
         // 特殊矩形
         r.alpha = rect_spe_alpha;
         r.addEventListener("click", function () {
-          if (n < 7) {
-            n++;
+          if (row_n < row_max) {
+            row_n++;
           }
           gameView.removeAllChildren();
           addRect();

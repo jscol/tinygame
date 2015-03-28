@@ -1,0 +1,17 @@
+CACHE MANIFEST
+
+CACHE:
+index.html
+images/png.png
+images/png1.png
+images/png2.png
+images/png5.png
+images/png6.png
+images/qie.png
+../lib/easeljs-0.8.0.min.js
+../_lib/tweenjs-0.6.0.min.js
+../_lib/preloadjs-0.6.0.min.js
+../_lib/movieclip-0.8.0.min.js
+flashlib.js
+bg.js
+app.js

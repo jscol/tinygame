@@ -1,6 +1,9 @@
 CACHE MANIFEST
 
 CACHE:
+images/bg.jpg
+images/stay.png
+images/weizhu.png
 index.html
 ../lib/easeljs-0.8.0.min.js
 app.js

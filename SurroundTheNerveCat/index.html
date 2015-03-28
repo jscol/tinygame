@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>围住神经猫 SURROUND THE NERVE CAT</title>
+    <style type="text/css">
+    	* {
+    		margin: 0px;
+    		padding: 0px;
+    	}
+    	.container {
+            background-image: url("images/bg.jpg");
+            width: 640px;
+            height: 1136px;
+    		margin: 0px auto;
+    	}
+        .status {
+            position: relative;
+            top: 350px;
+            left: 60px;
+            width: 525px;
+            height:  100px;
+            font-family: "Times New Roman";
+            font-size: 22px;
+            color: #f0f0f0;
+        }
+        .info {
+            float: left;
+            width: 320px;
+            text-align: right;
+        }
+        .step {
+            float: left;
+            width: 205px;
+            text-align: right;
+        }
+        #gameView {
+            position: relative;
+            top: 250px;
+            left: 60px;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+        <div class="status">
+            <div class="info" id="info">GAME START</div>
+            <div class="step" id="step">Step: 0</div>
+        </div>
+		<canvas width="525" height="560" id="gameView"></canvas>
+	</div>
+	<script src="../_lib/easeljs-0.8.0.min.js"></script>
+    <script src="circle.js"></script>
+    <script src="cat_surround.js"></script>
+    <script src="cat_stay.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

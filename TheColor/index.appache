@@ -1,0 +1,7 @@
+CACHE MANIFEST
+
+CACHE:
+index.html
+../lib/easeljs-0.8.0.min.js
+app.js
+rect.js

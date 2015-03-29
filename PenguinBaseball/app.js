@@ -54,7 +54,7 @@ function bearClickHandler (e) {
 }
 
 function qieTickHandler (e) {
-  qieRoot.y+=10;
+  qieRoot.y += 10;
 }
 
 function bearClickHandlerPlay (e) {
@@ -72,7 +72,7 @@ function qieTickHandlerfly (e) {
     if (qieRoot.x < 0 || qieRoot.y < 0) {
        gogo();
        flag = false;
-       if(fly_speed_y == 0){
+       if(fly_speed_y == 0) {
          qieRoot.x = 700;
          qieRoot.y = 400;
        }

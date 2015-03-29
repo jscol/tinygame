@@ -32,24 +32,31 @@
     BgRoot = new lib.Bg();
     exportRoot.addChild(BgRoot);
     
-    interval = setInterval(addElment,1000);
+    interval = setInterval(intervalHlr, 1000);
 
     createjs.Ticker.setFPS(lib.properties.fps);
     createjs.Ticker.addEventListener("tick", stage);
   }
 
-  function addElment () {
-    console.log(time, duration)
+  function intervalHlr () {
     if (time >= duration) {
       // game over
       clearInterval(interval);
       return;
     }
 
+    time++;
+    timeDiv.innerHTML = "TIMER: " + (duration - time) + "s";
+
+    addElment();
+  }
+
+  function addElment () {
     Ex = parseInt(Math.random()*3);
     Ey = parseInt(Math.random()*3);
     if (x != Ex && y != Ey) {
       IceRoot = new lib.up();
+      IceRoot.addEventListener("click",IceClickHandler);
       IceRoot.x = ElmentArrX[Ex];
       IceRoot.y = ElmentArrY[Ey];
       exportRoot.addChild(IceRoot);
@@ -58,12 +65,8 @@
     } else {
       addElment();
     }
-
-    IceRoot.addEventListener("click",IceClickHandler);
-
-    time++;
-    timeDiv.innerHTML = "TIMER: " + (duration - time) + "s";
   }
+
   function IceClickHandler (e) {
     e.currentTarget.gotoAndPlay("godown");
     i++;

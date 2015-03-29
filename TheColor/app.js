@@ -67,7 +67,7 @@
     timeout = setInterval(function () {
       timecount++;
       timeDiv.innerHTML = "TIMER: " + (timecount_max - timecount) + "s";
-      if (timecount === timecount_max) {
+      if (timecount >= timecount_max) {
         clearInterval(timeout);
         gameView.removeAllChildren();
         resetBtn.style.visibility = "visible";

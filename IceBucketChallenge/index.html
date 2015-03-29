@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>冰桶挑战 ICE BUCKET CHALLENGE</title>
+    <style type="text/css">
+    	* {
+    		margin: 0px;
+    		padding: 0px;
+    	}
+    	.container {
+    		width: 500px;
+    		height: 400px;
+            background-color: #ffffff;
+    		margin: 0px auto;
+    	}
+        .status {
+            width: 500px;
+            margin: 0px auto;
+            font-size: 22px;
+            font-family: "Times New Roman";
+            color: #ffffff;
+        }
+        .reset {
+            float: left;
+            width: 100px;
+            height: 26px;
+        }
+        .time {
+            float: left;
+            width: 200px;
+            text-align: right;
+        }
+        .count {
+            float: left;
+            width: 200px;
+            text-align: right;
+        }
+    </style>
 </head>
 <body style="background-color:#D4D4D4">
-    <canvas id="canvas" width="500" height="400" style="background-color:#FFFFFF"></canvas>
+    <div class="container">
+    	<canvas id="canvas" width="500" height="400" style="background-color:#FFFFFF"></canvas>
+    <div>
+    <div class="status">
+        <div class="reset" id="reset"></div>
+        <div class="time" id="time">TIMER: 60s</div>
+        <div class="count" id="count">Count: 0</div>
+    </div>
     <script src="../lib/easeljs-0.8.0.min.js"></script>
     <script src="../lib/tweenjs-0.6.0.min.js"></script>
     <script src="../lib/preloadjs-0.6.0.min.js"></script>

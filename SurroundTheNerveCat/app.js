@@ -228,6 +228,8 @@
       catSurround.y = currentCat.y;
       catView.addChild(catSurround);
 
+      gameView.mouseEnabled = false;
+      gameView.mouseChildren = false;
       infoDiv.innerHTML = "YOU WIN!";
     } else {
       catStay.x = currentCat.x;

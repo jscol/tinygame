@@ -6,8 +6,8 @@ images/bg.png
 images/mn.png
 images/zpf.png
 ../lib/easeljs-0.8.0.min.js
-../_lib/tweenjs-0.6.0.min.js
-../_lib/preloadjs-0.6.0.min.js
-../_lib/movieclip-0.8.0.min.js
+../lib/tweenjs-0.6.0.min.js
+../lib/preloadjs-0.6.0.min.js
+../lib/movieclip-0.8.0.min.js
 flishlib.js
 app.js
